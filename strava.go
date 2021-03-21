@@ -25,7 +25,7 @@ const (
 )
 
 // AuthorizationError describe the token authorization error.
-var AuthorizationError = errors.New("Authorization Error")
+var AuthorizationError = errors.New("authorization error")
 
 // Client is the client interface of Strava service.
 type Client interface {
@@ -74,7 +74,7 @@ type AccessToken struct {
 // close is used as defer to automatically close the body and prevent memory leak.
 func closeHTTPResponse(r *http.Response) {
 	if r != nil && r.Body != nil {
-		r.Body.Close()
+		_ = r.Body.Close()
 	}
 }
 
