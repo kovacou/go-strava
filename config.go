@@ -22,6 +22,7 @@ type Config struct {
 	Host         string `json:"host" env:"STRAVA_HOST"`
 	ClientID     string `json:"client_id" env:"STRAVA_ID"`
 	ClientSecret string `json:"client_secret" env:"STRAVA_SECRET"`
+	RedirectURI  string `json:"redirect_uri" env:"STRAVA_REDIRECT_URI"`
 	Timeout      uint16 `json:"timeout" env:"STRAVA_TIMEOUT"`
 	Scope        string `json:"scope" env:"STRAVA_SCOPE"`
 }

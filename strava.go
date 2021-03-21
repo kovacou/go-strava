@@ -114,7 +114,7 @@ func (s *strava) SetUserID(id uint64) {
 
 // AuthorizationURL returns the URL to get the authorization from the user.
 func (s *strava) AuthorizationURL(state string) string {
-	return fmt.Sprintf("https://www.strava.com/oauth/authorize?client_id=%s&response_type=code&redirect_uri=http://runjoy.kovacou.com&approval_prompt=force&scope=%s&state=%s", s.cfg.ClientID, s.cfg.Scope, state)
+	return fmt.Sprintf("https://www.strava.com/oauth/authorize?client_id=%s&response_type=code&redirect_uri=%s&approval_prompt=force&scope=%s&state=%s", s.cfg.ClientID, s.cfg.RedirectURI, s.cfg.Scope, state)
 }
 
 // AuthorizationAccessToken get an access token from code or refresh_token.
